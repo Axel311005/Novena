@@ -231,7 +231,7 @@
             Controls.Add(dgvKids);
             Controls.Add(groupBox2);
             Name = "frmAdd";
-            Text = "frmAdd";
+            Text = "Gestión de Niños";
             Load += frmAdd_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();

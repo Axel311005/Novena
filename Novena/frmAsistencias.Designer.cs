@@ -287,7 +287,7 @@
             Controls.Add(dgvAsistencia);
             Controls.Add(groupBox1);
             Name = "frmAsistencias";
-            Text = "frmAsistencias";
+            Text = "Asistencias";
             Load += frmAsistencias_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

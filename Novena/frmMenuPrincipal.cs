@@ -50,8 +50,8 @@ namespace Novena
         private void Reset()
         {
             lblTitle.Text = "HOME";
-            panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
-            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            //panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
+            //panelLogo.BackColor = Color.FromArgb(39, 39, 58);
             currentButton = null;
             btnCloseChildForm.Visible = false;
         }
