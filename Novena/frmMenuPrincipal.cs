@@ -21,6 +21,7 @@ namespace Novena
         public frmMenuPrincipal()
         {
             InitializeComponent();
+            random = new Random();
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
@@ -59,11 +60,15 @@ namespace Novena
         private void btnKids_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmAdd(), sender);
+            btnCloseChildForm.Visible = true;
+
         }
 
         private void btnAsistencia_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmAsistencias(), sender);
+            btnCloseChildForm.Visible = true;
+
         }
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
