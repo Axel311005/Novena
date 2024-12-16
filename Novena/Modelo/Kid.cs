@@ -21,7 +21,7 @@ namespace Novena.Modelo
 
         public string Segundo_Apellido { get; set; }
 
-        public int Edad { get; set; }
+        public string Edad { get; set; }
 
         public string Sexo { get; set; }
 

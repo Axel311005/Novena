@@ -61,7 +61,7 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(193, 736);
+            panelMenu.Size = new Size(213, 736);
             panelMenu.TabIndex = 0;
             // 
             // btnAsistencia
@@ -71,13 +71,13 @@
             btnAsistencia.FlatAppearance.BorderSize = 0;
             btnAsistencia.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 89, 0);
             btnAsistencia.FlatStyle = FlatStyle.Flat;
-            btnAsistencia.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAsistencia.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAsistencia.ForeColor = Color.White;
             btnAsistencia.Image = (Image)resources.GetObject("btnAsistencia.Image");
             btnAsistencia.ImageAlign = ContentAlignment.MiddleLeft;
             btnAsistencia.Location = new Point(0, 123);
             btnAsistencia.Name = "btnAsistencia";
-            btnAsistencia.Size = new Size(193, 60);
+            btnAsistencia.Size = new Size(213, 60);
             btnAsistencia.TabIndex = 10;
             btnAsistencia.Text = "Asistencia";
             btnAsistencia.UseVisualStyleBackColor = false;
@@ -90,13 +90,13 @@
             btnKids.FlatAppearance.BorderSize = 0;
             btnKids.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 89, 0);
             btnKids.FlatStyle = FlatStyle.Flat;
-            btnKids.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnKids.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnKids.ForeColor = Color.White;
             btnKids.Image = (Image)resources.GetObject("btnKids.Image");
             btnKids.ImageAlign = ContentAlignment.MiddleLeft;
             btnKids.Location = new Point(0, 63);
             btnKids.Name = "btnKids";
-            btnKids.Size = new Size(193, 60);
+            btnKids.Size = new Size(213, 60);
             btnKids.TabIndex = 9;
             btnKids.Text = "Niños";
             btnKids.UseVisualStyleBackColor = false;
@@ -106,18 +106,19 @@
             // 
             panelLogo.Controls.Add(label1);
             panelLogo.Dock = DockStyle.Top;
+            panelLogo.Font = new Font("Microsoft Sans Serif", 12F);
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(193, 63);
+            panelLogo.Size = new Size(213, 63);
             panelLogo.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(35, 24);
+            label1.Location = new Point(22, 19);
             label1.Name = "label1";
-            label1.Size = new Size(107, 20);
+            label1.Size = new Size(146, 25);
             label1.TabIndex = 0;
             label1.Text = "Parroquia SMA";
             // 
@@ -130,9 +131,9 @@
             panelTitleBar.Controls.Add(btnResize);
             panelTitleBar.Controls.Add(btnCerrar);
             panelTitleBar.Dock = DockStyle.Top;
-            panelTitleBar.Location = new Point(193, 0);
+            panelTitleBar.Location = new Point(213, 0);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(1108, 66);
+            panelTitleBar.Size = new Size(1088, 66);
             panelTitleBar.TabIndex = 1;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
             // 
@@ -155,7 +156,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(468, 25);
+            lblTitle.Location = new Point(458, 25);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(67, 22);
             lblTitle.TabIndex = 10;
@@ -166,7 +167,7 @@
             btnMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnMinimizar.Cursor = Cursors.Hand;
             btnMinimizar.Image = (Image)resources.GetObject("btnMinimizar.Image");
-            btnMinimizar.Location = new Point(1010, 12);
+            btnMinimizar.Location = new Point(990, 12);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.Size = new Size(35, 35);
             btnMinimizar.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -179,7 +180,7 @@
             btnResize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnResize.Cursor = Cursors.Hand;
             btnResize.Image = (Image)resources.GetObject("btnResize.Image");
-            btnResize.Location = new Point(966, 11);
+            btnResize.Location = new Point(946, 11);
             btnResize.Name = "btnResize";
             btnResize.Size = new Size(38, 37);
             btnResize.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -192,7 +193,7 @@
             btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCerrar.Cursor = Cursors.Hand;
             btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
-            btnCerrar.Location = new Point(1051, 11);
+            btnCerrar.Location = new Point(1031, 11);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(41, 43);
             btnCerrar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -204,9 +205,9 @@
             // 
             panelDesktop.Controls.Add(pictureBox1);
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(193, 66);
+            panelDesktop.Location = new Point(213, 66);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(1108, 670);
+            panelDesktop.Size = new Size(1088, 670);
             panelDesktop.TabIndex = 2;
             // 
             // pictureBox1
@@ -215,7 +216,7 @@
             pictureBox1.Image = Properties.Resources.logo_parroquia;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1108, 670);
+            pictureBox1.Size = new Size(1088, 670);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;

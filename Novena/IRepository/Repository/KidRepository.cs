@@ -135,5 +135,38 @@ namespace Novena.IRepository.Repository
                 }
             }
         }
+
+        public DataTable BuscarPorNombre(string nombreCompleto)
+        {
+            string query = @"
+                SELECT id_kid, 
+                       primer_nombre, segundo_nombre,
+                       primer_apellido,segundo_apellido,
+                       edad, sexo
+                FROM Kid
+                WHERE primer_nombre + ' ' + ISNULL(segundo_nombre, '') + ' ' +
+                      primer_apellido + ' ' + ISNULL(segundo_apellido, '') LIKE @nombreCompleto";
+
+            DataTable resultado = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@nombreCompleto", "%" + nombreCompleto + "%");
+
+                try
+                {
+                    connection.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(resultado);
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Error al realizar la búsqueda: " + e.Message);
+                }
+            }
+
+            return resultado;
+        }
     }
 }

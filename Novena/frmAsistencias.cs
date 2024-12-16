@@ -39,6 +39,11 @@ namespace Novena
 
                 var asist = asistencia.GetAll();
                 dgvAsistencia.DataSource = asist;
+                dgvAsistencia.Columns["Nombre_Completo"].Width = 325; // Ajusta el valor según necesites.
+                dgvAsistencia.Columns["id_asistencia"].Visible = false;
+                dgvAsistencia.Columns["id_kid"].Visible = false;
+
+
 
 
             }
@@ -162,40 +167,83 @@ namespace Novena
 
         private void dgvAsistencia_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            //if (e.RowIndex >= 0)
+            //{
+            //    DataGridViewRow row = dgvAsistencia.Rows[e.RowIndex];
+
+            //    AsistenciaView asist = new AsistenciaView
+            //    {
+            //        Nombre_Completo = row.Cells["Nombre_Completo"].Value?.ToString(),
+            //        edad = Convert.ToInt32(row.Cells["edad"].Value?.ToString()),
+            //        Day1 = Convert.ToBoolean(row.Cells["Day1"].Value),
+            //        Day2 = Convert.ToBoolean(row.Cells["Day2"].Value),
+            //        Day3 = Convert.ToBoolean(row.Cells["Day3"].Value),
+            //        Day4 = Convert.ToBoolean(row.Cells["Day4"].Value),
+            //        Day5 = Convert.ToBoolean(row.Cells["Day5"].Value),
+            //        Day6 = Convert.ToBoolean(row.Cells["Day6"].Value),
+            //        Day7 = Convert.ToBoolean(row.Cells["Day7"].Value),
+            //        Day8 = Convert.ToBoolean(row.Cells["Day8"].Value),
+            //        Day9 = Convert.ToBoolean(row.Cells["Day9"].Value),
+            //        id_kid = Convert.ToInt32(row.Cells["id_kid"].Value?.ToString()),
+            //    };
+
+            //    idAsist = Convert.ToInt32(row.Cells["id_asistencia"].Value?.ToString());
+            //    chbDay1.Checked = asist.Day1;
+            //    chbDay2.Checked = asist.Day2;
+            //    chbDay3.Checked = asist.Day3;
+            //    chbDay4.Checked = asist.Day4;
+            //    chbDay5.Checked = asist.Day5;
+            //    chbDay6.Checked = asist.Day6;
+            //    chbDay7.Checked = asist.Day7;
+            //    chbDay8.Checked = asist.Day8;
+            //    chbDay9.Checked = asist.Day9;
+            //    txtNombreCompleto.Text = asist.Nombre_Completo;
+            //    idKid = Convert.ToInt32(row.Cells["id_kid"].Value?.ToString());
+
+            //}
+
+
+            // Validar si se seleccionó una fila válida y no la fila vacía (nueva fila)
+            if (e.RowIndex < 0 || dgvAsistencia.Rows[e.RowIndex].IsNewRow)
+                return;
+
+            DataGridViewRow row = dgvAsistencia.Rows[e.RowIndex];
+
+            // Validar si las celdas tienen valores antes de asignarlas
+            if (row.Cells["Nombre_Completo"].Value == null || row.Cells["id_asistencia"].Value == null)
+                return;
+
+            AsistenciaView asist = new AsistenciaView
             {
-                DataGridViewRow row = dgvAsistencia.Rows[e.RowIndex];
+                Nombre_Completo = row.Cells["Nombre_Completo"].Value?.ToString(),
+                edad = row.Cells["edad"]?.Value?.ToString(),
+                Day1 = Convert.ToBoolean(row.Cells["Day1"]?.Value ?? false),
+                Day2 = Convert.ToBoolean(row.Cells["Day2"]?.Value ?? false),
+                Day3 = Convert.ToBoolean(row.Cells["Day3"]?.Value ?? false),
+                Day4 = Convert.ToBoolean(row.Cells["Day4"]?.Value ?? false),
+                Day5 = Convert.ToBoolean(row.Cells["Day5"]?.Value ?? false),
+                Day6 = Convert.ToBoolean(row.Cells["Day6"]?.Value ?? false),
+                Day7 = Convert.ToBoolean(row.Cells["Day7"]?.Value ?? false),
+                Day8 = Convert.ToBoolean(row.Cells["Day8"]?.Value ?? false),
+                Day9 = Convert.ToBoolean(row.Cells["Day9"]?.Value ?? false),
+                id_kid = Convert.ToInt32(row.Cells["id_kid"]?.Value?.ToString() ?? "0")
+            };
 
-                AsistenciaView asist = new AsistenciaView
-                {
-                    Nombre_Completo = row.Cells["Nombre_Completo"].Value?.ToString(),
-                    edad = Convert.ToInt32(row.Cells["edad"].Value?.ToString()),
-                    Day1 = Convert.ToBoolean(row.Cells["Day1"].Value),
-                    Day2 = Convert.ToBoolean(row.Cells["Day2"].Value),
-                    Day3 = Convert.ToBoolean(row.Cells["Day3"].Value),
-                    Day4 = Convert.ToBoolean(row.Cells["Day4"].Value),
-                    Day5 = Convert.ToBoolean(row.Cells["Day5"].Value),
-                    Day6 = Convert.ToBoolean(row.Cells["Day6"].Value),
-                    Day7 = Convert.ToBoolean(row.Cells["Day7"].Value),
-                    Day8 = Convert.ToBoolean(row.Cells["Day8"].Value),
-                    Day9 = Convert.ToBoolean(row.Cells["Day9"].Value),
-                    id_kid = Convert.ToInt32(row.Cells["id_kid"].Value?.ToString()),
-                };
+            idAsist = Convert.ToInt32(row.Cells["id_asistencia"]?.Value?.ToString() ?? "0");
 
-                idAsist = Convert.ToInt32(row.Cells["id_asistencia"].Value?.ToString());
-                chbDay1.Checked = asist.Day1;
-                chbDay2.Checked = asist.Day2;
-                chbDay3.Checked = asist.Day3;
-                chbDay4.Checked = asist.Day4;
-                chbDay5.Checked = asist.Day5;
-                chbDay6.Checked = asist.Day6;
-                chbDay7.Checked = asist.Day7;
-                chbDay8.Checked = asist.Day8;
-                chbDay9.Checked = asist.Day9;
-                txtNombreCompleto.Text = asist.Nombre_Completo;
-                idKid = Convert.ToInt32(row.Cells["id_kid"].Value?.ToString());
+            // Actualizar los controles
+            chbDay1.Checked = asist.Day1;
+            chbDay2.Checked = asist.Day2;
+            chbDay3.Checked = asist.Day3;
+            chbDay4.Checked = asist.Day4;
+            chbDay5.Checked = asist.Day5;
+            chbDay6.Checked = asist.Day6;
+            chbDay7.Checked = asist.Day7;
+            chbDay8.Checked = asist.Day8;
+            chbDay9.Checked = asist.Day9;
 
-            }
+            txtNombreCompleto.Text = asist.Nombre_Completo;
+            idKid = Convert.ToInt32(row.Cells["id_kid"]?.Value?.ToString() ?? "0");
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -216,6 +264,22 @@ namespace Novena
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             Refresh();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarText();
+        }
+
+        private void txtBuscador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) &&
+                e.KeyChar != (char)Keys.Back &&
+                e.KeyChar != ' ' &&
+                !"áéíóúÁÉÍÓÚüÜñÑ".Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
