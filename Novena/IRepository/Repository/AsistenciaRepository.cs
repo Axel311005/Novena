@@ -99,6 +99,94 @@ namespace Novena.IRepository.Repository
             return bodegas;
         }
 
+        public DataTable Edades10a13()
+        {
+            DataTable edades = new DataTable();
+            string query = "Select k.primer_nombre + ' '+ k.segundo_nombre + ' '+ k.primer_apellido  + ' '+ k.segundo_apellido as Nombre_Completo, k.edad ,\r\na.Day1,a.Day2,a.Day3,a.Day4,a.Day5,a.Day6,a.Day7,a.Day8,a.Day9\r\nFROM Asistencia a\r\ninner join Kid k on k.id_kid = a.id_kid\r\nwhere edad in ('10','11','12','13')\r\norder by edad asc;";
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(edades);
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Error: " + e.Message);
+                }
+            }
+            return edades;
+        }
+
+        public DataTable Edades7a9()
+        {
+            DataTable edades = new DataTable();
+            string query = "Select k.primer_nombre + ' '+ k.segundo_nombre + ' '+ k.primer_apellido  + ' '+ k.segundo_apellido as Nombre_Completo, k.edad ,\r\na.Day1,a.Day2,a.Day3,a.Day4,a.Day5,a.Day6,a.Day7,a.Day8,a.Day9\r\nFROM Asistencia a\r\ninner join Kid k on k.id_kid = a.id_kid\r\nwhere edad in ('7','8','9')\r\norder by edad asc;";
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(edades);
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Error: " + e.Message);
+                }
+            }
+            return edades;
+        }
+
+        public DataTable Edades4a6()
+        {
+            DataTable edades = new DataTable();
+            string query = "Select k.primer_nombre + ' '+ k.segundo_nombre + ' '+ k.primer_apellido  + ' '+ k.segundo_apellido as Nombre_Completo, k.edad ,\r\na.Day1,a.Day2,a.Day3,a.Day4,a.Day5,a.Day6,a.Day7,a.Day8,a.Day9\r\nFROM Asistencia a\r\ninner join Kid k on k.id_kid = a.id_kid\r\nwhere edad in ('4','5','6')\r\norder by edad asc;";
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(edades);
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Error: " + e.Message);
+                }
+            }
+            return edades;
+        }
+
+        public DataTable Edades0a3()
+        {
+            DataTable edades = new DataTable();
+            string query = "Select k.primer_nombre + ' '+ k.segundo_nombre + ' '+ k.primer_apellido  + ' '+ k.segundo_apellido as Nombre_Completo, k.edad ,\r\na.Day1,a.Day2,a.Day3,a.Day4,a.Day5,a.Day6,a.Day7,a.Day8,a.Day9\r\nFROM Asistencia a\r\ninner join Kid k on k.id_kid = a.id_kid\r\nwhere edad in ('1m','2m','3m','4m','5m','6m','7m','8m','9m','10m','11m','1','2','3')\r\norder by edad desc;";
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(edades);
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Error: " + e.Message);
+                }
+            }
+            return edades;
+
+        }
+
+
+
         public void Update(Asistencia asistencia, int id)
         {
             string query = @"UPDATE Asistencia 

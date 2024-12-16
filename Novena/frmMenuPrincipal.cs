@@ -104,5 +104,11 @@ namespace Novena
         {
             Application.Exit();
         }
+
+        private void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Estadisticas(), sender);
+            btnCloseChildForm.Visible = true;
+        }
     }
 }

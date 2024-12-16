@@ -281,5 +281,11 @@ namespace Novena
                 e.Handled = true;
             }
         }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            ExportarExcel excel = new ExportarExcel();
+            excel.ExportarAExcelConEPPlus(dgvAsistencia);
+        }
     }
 }

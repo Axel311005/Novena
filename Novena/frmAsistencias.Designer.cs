@@ -49,6 +49,7 @@
             btnBuscar = new Button();
             btnRefrescar = new Button();
             btnLimpiar = new Button();
+            btnExportar = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAsistencia).BeginInit();
             SuspendLayout();
@@ -296,11 +297,26 @@
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
+            // btnExportar
+            // 
+            btnExportar.BackColor = Color.DeepSkyBlue;
+            btnExportar.FlatStyle = FlatStyle.Flat;
+            btnExportar.Font = new Font("Segoe UI Variable Small Semibol", 12F, FontStyle.Bold);
+            btnExportar.ForeColor = SystemColors.ButtonHighlight;
+            btnExportar.Location = new Point(957, 352);
+            btnExportar.Name = "btnExportar";
+            btnExportar.Size = new Size(116, 36);
+            btnExportar.TabIndex = 33;
+            btnExportar.Text = "Exportar";
+            btnExportar.UseVisualStyleBackColor = false;
+            btnExportar.Click += btnExportar_Click;
+            // 
             // frmAsistencias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 624);
+            Controls.Add(btnExportar);
             Controls.Add(btnLimpiar);
             Controls.Add(btnRefrescar);
             Controls.Add(btnBuscar);
@@ -343,5 +359,6 @@
         private Button btnBuscar;
         private Button btnRefrescar;
         private Button btnLimpiar;
+        private Button btnExportar;
     }
 }
