@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             panelMenu = new Panel();
+            btnEstadisticas = new Button();
             btnAsistencia = new Button();
             btnKids = new Button();
             panelLogo = new Panel();
@@ -42,7 +43,6 @@
             btnCerrar = new PictureBox();
             panelDesktop = new Panel();
             pictureBox1 = new PictureBox();
-            btnEstadisticas = new Button();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             panelTitleBar.SuspendLayout();
@@ -65,6 +65,25 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(213, 736);
             panelMenu.TabIndex = 0;
+            // 
+            // btnEstadisticas
+            // 
+            btnEstadisticas.BackColor = Color.Transparent;
+            btnEstadisticas.Dock = DockStyle.Top;
+            btnEstadisticas.FlatAppearance.BorderSize = 0;
+            btnEstadisticas.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 89, 0);
+            btnEstadisticas.FlatStyle = FlatStyle.Flat;
+            btnEstadisticas.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEstadisticas.ForeColor = Color.White;
+            btnEstadisticas.Image = (Image)resources.GetObject("btnEstadisticas.Image");
+            btnEstadisticas.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEstadisticas.Location = new Point(0, 183);
+            btnEstadisticas.Name = "btnEstadisticas";
+            btnEstadisticas.Size = new Size(213, 60);
+            btnEstadisticas.TabIndex = 11;
+            btnEstadisticas.Text = "Estadisticas";
+            btnEstadisticas.UseVisualStyleBackColor = false;
+            btnEstadisticas.Click += btnEstadisticas_Click;
             // 
             // btnAsistencia
             // 
@@ -222,25 +241,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
-            // btnEstadisticas
-            // 
-            btnEstadisticas.BackColor = Color.Transparent;
-            btnEstadisticas.Dock = DockStyle.Top;
-            btnEstadisticas.FlatAppearance.BorderSize = 0;
-            btnEstadisticas.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 89, 0);
-            btnEstadisticas.FlatStyle = FlatStyle.Flat;
-            btnEstadisticas.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEstadisticas.ForeColor = Color.White;
-            btnEstadisticas.Image = (Image)resources.GetObject("btnEstadisticas.Image");
-            btnEstadisticas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEstadisticas.Location = new Point(0, 183);
-            btnEstadisticas.Name = "btnEstadisticas";
-            btnEstadisticas.Size = new Size(213, 60);
-            btnEstadisticas.TabIndex = 11;
-            btnEstadisticas.Text = "Estadisticas";
-            btnEstadisticas.UseVisualStyleBackColor = false;
-            btnEstadisticas.Click += btnEstadisticas_Click;
             // 
             // frmMenuPrincipal
             // 
