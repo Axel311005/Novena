@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox2 = new GroupBox();
+            txtEdad = new ComboBox();
             label5 = new Label();
             txtSegundoApellido = new TextBox();
             label4 = new Label();
@@ -49,7 +50,7 @@
             btnDeleteKid = new Button();
             btnRefrescar = new Button();
             btnLimpiar = new Button();
-            txtEdad = new ComboBox();
+            btnExportar = new Button();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvKids).BeginInit();
             SuspendLayout();
@@ -76,6 +77,14 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Información";
             groupBox2.Enter += groupBox2_Enter;
+            // 
+            // txtEdad
+            // 
+            txtEdad.FormattingEnabled = true;
+            txtEdad.Location = new Point(633, 55);
+            txtEdad.Name = "txtEdad";
+            txtEdad.Size = new Size(192, 35);
+            txtEdad.TabIndex = 21;
             // 
             // label5
             // 
@@ -287,19 +296,26 @@
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // txtEdad
+            // btnExportar
             // 
-            txtEdad.FormattingEnabled = true;
-            txtEdad.Location = new Point(633, 55);
-            txtEdad.Name = "txtEdad";
-            txtEdad.Size = new Size(192, 35);
-            txtEdad.TabIndex = 21;
+            btnExportar.BackColor = Color.DeepSkyBlue;
+            btnExportar.FlatStyle = FlatStyle.Flat;
+            btnExportar.Font = new Font("Segoe UI Variable Small Semibol", 12F, FontStyle.Bold);
+            btnExportar.ForeColor = SystemColors.ButtonHighlight;
+            btnExportar.Location = new Point(895, 330);
+            btnExportar.Name = "btnExportar";
+            btnExportar.Size = new Size(116, 36);
+            btnExportar.TabIndex = 36;
+            btnExportar.Text = "Exportar";
+            btnExportar.UseVisualStyleBackColor = false;
+            btnExportar.Click += btnExportar_Click;
             // 
             // frmAdd
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1023, 637);
+            Controls.Add(btnExportar);
             Controls.Add(btnLimpiar);
             Controls.Add(btnRefrescar);
             Controls.Add(btnBuscar);
@@ -344,5 +360,6 @@
         private Button btnRefrescar;
         private Button btnLimpiar;
         private ComboBox txtEdad;
+        private Button btnExportar;
     }
 }

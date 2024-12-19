@@ -20,6 +20,7 @@ namespace Novena
 
         KidRepository kid;
         public int idKid;
+        ExportarExcel excel = new ExportarExcel();
         public frmAdd()
         {
             InitializeComponent();
@@ -105,7 +106,7 @@ namespace Novena
             {
                 try
                 {
-                    
+
                     var update = new Kid
                     {
                         Id_Kid = idKid,
@@ -298,6 +299,10 @@ namespace Novena
             }
         }
 
-       
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            excel.ExportarAExcelConEPPlus(dgvKids);
+
+        }
     }
 }
